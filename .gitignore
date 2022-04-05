@@ -1,3 +1,4 @@
+.DS_Store
 .env
 user_data/data*
 user_data/logs*
