@@ -36,6 +36,7 @@
         "sandbox": true,
         "secret": "$EXCHANGE_SECRET",
         "password": "$EXCHANGE_PASSWORD",
+        "outdated_offset": 5,
         "ccxt_config": {},
         "ccxt_async_config": {},
         "pair_whitelist": ["BTC/USD"],
