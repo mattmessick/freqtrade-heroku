@@ -1,10 +1,10 @@
 {
-    "strategy": "EnsembleStrategy",
+    "strategy": "$LIVE_STRATEGY",
     "db_url": "$LIVE_DATABASE_URL",
     "dry_run": false,
     "timeframe": "5m",
     "max_open_trades": 20,
-    "stake_currency": "USDT",
+    "stake_currency": "USD",
     "stake_amount": "unlimited",
     "tradable_balance_ratio": 0.99,
     "fiat_display_currency": "USD",
@@ -33,6 +33,7 @@
         "name": "$EXCHANGE_NAME",
         "key": "$EXCHANGE_KEY",
         "secret": "$EXCHANGE_SECRET",
+        "password": "$EXCHANGE_PASSWORD",
         "ccxt_config": {"enableRateLimit": true},
         "ccxt_async_config": {
             "enableRateLimit": true,
@@ -101,7 +102,7 @@
     "api_server": {
         "enabled": true,
         "listen_ip_address": "0.0.0.0",
-        "listen_port": $PORT,
+        "listen_port": 8888,
         "verbosity": "error",
         "enable_openapi": false,
         "jwt_secret_key": "$SECURE_KEY",
