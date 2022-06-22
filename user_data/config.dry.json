@@ -42,23 +42,48 @@
             "rateLimit": 500
         },
         "pair_whitelist": [
-            "BTC/USD",
-            "ETH/USD",
-            "DOGE/USD",
-            "SHIB/USD",
-            "ADA/USD",
-            "CRO/USD",
-            "MATIC/USD",
-            "ICP/USD",
-            "JASMY/USD",
-            "MANA/USD",
-            "AMP/USD",
-            "XTZ/USD",
-            "CLV/USD"
+            // "BTC/USD",
+            // "ETH/USD",
+            // "DOGE/USD",
+            // "SHIB/USD",
+            // "ADA/USD",
+            // "CRO/USD",
+            // "MATIC/USD",
+            // "ICP/USD",
+            // "JASMY/USD",
+            // "MANA/USD",
+            // "AMP/USD",
+            // "XTZ/USD",
+            // "CLV/USD"
         ],
         "pair_blacklist": []
     },
-    "pairlists": [{ "method": "StaticPairList" }],
+    // "pairlists": [{ "method": "StaticPairList" }],
+    "pairlists": [
+        {
+            "method": "VolumePairList",
+            "number_assets": 20,
+            "sort_key": "quoteVolume"
+        },
+        {"method": "AgeFilter", "min_days_listed": 10},
+        {"method": "PrecisionFilter"},
+        {"method": "PriceFilter", "low_price_ratio": 0.01},
+        {"method": "SpreadFilter", "max_spread_ratio": 0.005},
+        {
+            "method": "RangeStabilityFilter",
+            "lookback_days": 10,
+            "min_rate_of_change": 0.01,
+            "refresh_period": 1440
+        },
+        {
+            "method": "VolatilityFilter",
+            "lookback_days": 10,
+            "min_volatility": 0.05,
+            "max_volatility": 0.50,
+            "refresh_period": 86400
+        },
+        {"method": "ShuffleFilter", "seed": 42}
+    ],
     "edge": {
         "enabled": false,
         "process_throttle_secs": 3600,
