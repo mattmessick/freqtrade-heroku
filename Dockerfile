@@ -19,7 +19,7 @@ RUN --mount=type=cache,mode=0755,target=/home/ftuser/.cache pip install -r /freq
 
 COPY requirements-rl.txt /freqtrade/requirements-rl.txt
 RUN --mount=type=cache,mode=0755,target=/home/ftuser/.cache pip install -r /freqtrade/requirements-rl.txt
-RUN --mount=type=cache,mode=0755,target=/home/ftuser/.cache pip install numpy==1.20.0
+RUN --mount=type=cache,mode=0755,target=/home/ftuser/.cache pip install numpy==1.23.0
 
 COPY load_env.sh /freqtrade/load_env.sh
 COPY Procfile /freqtrade/Procfile

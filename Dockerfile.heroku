@@ -14,7 +14,7 @@ RUN pip install -r /freqtrade/requirements.txt
 
 COPY requirements-rl.txt /freqtrade/requirements-rl.txt
 RUN pip install -r /freqtrade/requirements-rl.txt
-RUN pip install numpy==1.20.0
+RUN pip install numpy==1.23.0
 
 COPY load_env.sh /freqtrade/load_env.sh
 COPY Procfile /freqtrade/Procfile
